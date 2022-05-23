@@ -26,6 +26,9 @@
     "build": {
         "extends": null,
         "appId": "today.skid.code",
+        "win": {
+            "icon": "./public/favicon.ico"
+        },
         "files": [
             "dist/**/*",
             "build/**/*",

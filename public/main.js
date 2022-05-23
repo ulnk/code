@@ -11,6 +11,7 @@ const createWindow = () => {
         minHeight: 600,
         frame: false,
         icon: __dirname + '/favicon.ico',
+        backgroundColor: '#282c34',
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
