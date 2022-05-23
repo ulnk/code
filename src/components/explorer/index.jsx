@@ -5,7 +5,7 @@ import './index.css';
 const Explorer = () => {
     return (
         <nav className="explorer">
-
+            
         </nav>
     );
 }
