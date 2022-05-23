@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [16.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -25,5 +25,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run electron:build --if-present
+    - run: npm install yarn --global
+    - run: yarn install
+    - run: yarn electron:build --if-present
