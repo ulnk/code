@@ -1,0 +1,13 @@
+/* Content  */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #282c34;
+}
+.content-tabs {
+    height: 2rem;
+    width: 100%;
+    background-color: #21252b;
+}
