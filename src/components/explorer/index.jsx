@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './index.css';
 import { VscEllipsis, VscChevronDown, VscChevronRight } from 'react-icons/vsc';
@@ -7,6 +7,12 @@ const Explorer = () => {
     const [workspaceCollapsed, setWorkspaceCollapsed ] = useState(true);
     const [outlineCollapsed, setOutlineCollapsed] = useState(true);
     const [timelineCollapsed, setTimelineCollapsed] = useState(true);
+
+    const [numWorkspaceItems, setNumWorkspaceItems] = useState(0);
+
+    useEffect(() => {
+        setNumWorkspaceItems(5);
+    }, []);
 
     return (
         <nav className="explorer">
@@ -19,8 +25,23 @@ const Explorer = () => {
                     { !workspaceCollapsed ? <VscChevronDown /> : <VscChevronRight /> }
                     <span>WORKSPACE</span>
                 </div>
-                <div className={`explorer-category-content ${workspaceCollapsed && 'hidden'}`}> 
-                    <div className="test"></div>
+                <div style={{ 'height': `${numWorkspaceItems * 1.375}rem` }} className={`explorer-category-content ${workspaceCollapsed && 'hidden'}`}> 
+                    <div className="explorer-content-folder" >
+                        <VscChevronRight />
+                        <span className="explorer-content-folder-name">src</span>
+                    </div>
+                    <div className="explorer-content-file" >
+                        <span className="explorer-content-file-name">.gitignore</span>
+                    </div>
+                    <div className="explorer-content-file" >
+                        <span className="explorer-content-file-name">README.md</span>
+                    </div>
+                    <div className="explorer-content-file" >
+                        <span className="explorer-content-file-name">package.json</span>
+                    </div>
+                    <div className="explorer-content-file" >
+                        <span className="explorer-content-file-name">yarn.lock</span>
+                    </div>
                 </div> 
             </div>
             <div className="explorer-category-container">

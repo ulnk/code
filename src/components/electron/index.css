@@ -6,6 +6,7 @@
     align-items: center;
     width: 100vw;
     height: 1.9rem;
+    min-height: 1.9rem;
     background-color: #21252b;
     user-select: none;
     -webkit-app-region: drag;
@@ -54,6 +55,8 @@
     flex-grow: 1;
     text-align: center;
     color: #9da5b4;
+    text-overflow: ellipsis;
+    min-width: 10rem;
 }
 
 /* Right */

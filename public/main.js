@@ -1,3 +1,4 @@
+require('@electron/remote/main').initialize();
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
@@ -15,7 +16,7 @@ const createWindow = () => {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
-            enableRemoteModule: true
+            // enableRemoteModule: true
         }
     });
     

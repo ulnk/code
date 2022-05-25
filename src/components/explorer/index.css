@@ -14,7 +14,9 @@
     align-items: center;
     padding: 0 1.2rem;
     height: 2.1875rem;
+    min-height: 2.1875rem;
     width: 100%;
+    user-select: none;
 }
 
 .explorer-header-title {
@@ -44,16 +46,18 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
+    transition: height 70ms ease-out;
+
 }
 
 .explorer-category-header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0rem 0.125rem;
+    padding: 0rem 0 0 0.125rem;
     gap: 0.125rem;
-    width: 100%;
+    width: calc(100% - 0.125rem);
     height: 1.375rem;
     cursor: pointer;
     color: #cccccc;
@@ -72,17 +76,58 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 10rem;
+    /* height: 0;s */
     background-color: #21252b;
-    transition: height 70ms ease-out;
+    transition: height 100ms ease-out;
 }
 
-.explorer-category-content.hidden { height: 0; }
+.explorer-category-content:not(.hidden) { padding-bottom: 1em; }
+.explorer-category-content.hidden { height: 0 !important; }
 .explorer-category-content.hidden * { display: none; }
 
-.test {
-    position: absolute;
-    width: 15rem;
-    height: 14rem;
-    background-color: red;
+.explorer-content-folder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0rem 1rem;
+    width: 100%;
+    min-height: 1.375rem;
+    user-select: none;
+    cursor: pointer;
+    /* padding-left: 10rem; */
+}
+
+.explorer-content-folder:hover {
+    background-color: #282c34;
+}
+
+.explorer-content-folder-name {
+    font-size: 0.8125rem;
+    margin-bottom: 1px;
+    color: #cccccc;
+}
+
+.explorer-content-file {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0rem 2.25rem;
+    width: 100%;
+    min-height: 1.375rem;
+    height: 1.375rem;
+    user-select: none;
+    cursor: pointer;
+    /* padding-left: 10rem; */
+}
+
+.explorer-content-file:hover {
+    background-color: #282c34;
+}
+
+.explorer-content-file-name {
+    font-size: 0.8125rem;
+    margin-bottom: 1px;
+    color: #cccccc;
 }
