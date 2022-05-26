@@ -4,7 +4,7 @@ import './index.css';
 import { VscEllipsis, VscChevronDown, VscChevronRight } from 'react-icons/vsc';
 
 const Explorer = () => {
-    const [workspaceCollapsed, setWorkspaceCollapsed ] = useState(true);
+    const [workspaceCollapsed, setWorkspaceCollapsed ] = useState(false);
     const [outlineCollapsed, setOutlineCollapsed] = useState(true);
     const [timelineCollapsed, setTimelineCollapsed] = useState(true);
 
@@ -33,7 +33,7 @@ const Explorer = () => {
                     <div className="explorer-content-file" >
                         <span className="explorer-content-file-name">.gitignore</span>
                     </div>
-                    <div className="explorer-content-file" >
+                    <div className="explorer-content-file selected" >
                         <span className="explorer-content-file-name">README.md</span>
                     </div>
                     <div className="explorer-content-file" >

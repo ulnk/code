@@ -12,10 +12,11 @@ const createWindow = () => {
         minHeight: 600,
         frame: false,
         icon: __dirname + '/favicon.ico',
-        backgroundColor: '#282c34',
+        backgroundColor: '#1e1e1e',
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false,
+            preload: path.join(__dirname, 'preload.js'),
+            // contextIsolation: false,
             // enableRemoteModule: true
         }
     });

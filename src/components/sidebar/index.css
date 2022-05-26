@@ -5,7 +5,7 @@
     flex-direction: column;
     height: 100%;
     width: 3rem;
-    background-color: #333842;
+    background-color: #333333;
 }
 
 .sidebar-button {
@@ -16,13 +16,13 @@
     width: 100%;
     min-height: 3rem;
     font-size: 1.5rem;
-    color: #757982;
+    color: #858585;
     aspect-ratio: 1 / 1;
     transition: color 50ms ease-out;
 }
 
-.sidebar-button:hover { color: #d7dae0; }
-.sidebar-button.selected { color: #d7dae0; box-shadow: inset 0.125rem 0 0 #d7dae0; }
+.sidebar-button:hover { color: #ffffff; }
+.sidebar-button.selected { color: #ffffff; box-shadow: inset 0.125rem 0 0 #ffffff; }
 
 .sidebar-bottom-buttons {
     display: flex;

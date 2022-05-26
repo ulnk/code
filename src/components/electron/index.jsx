@@ -6,24 +6,6 @@ import logo from '../../assets/logo.png';
 import { VscChromeClose, VscChromeMaximize, VscChromeMinimize } from 'react-icons/vsc';
 
 const Electron = () => {
-    const handleCloseWindow = (e) => {
-        e.preventDefault();
-        const { ipcRenderer } = window.require("electron");
-        ipcRenderer.send('close');
-    };
-
-    const handleMinimiseWindow = (e) => {
-        e.preventDefault();
-        const { ipcRenderer } = window.require("electron");
-        ipcRenderer.send('minimise');
-    };
-
-    const handleRestoreWindow = (e) => {
-        e.preventDefault();
-        const { ipcRenderer } = window.require("electron");
-        ipcRenderer.send('restore');
-    };
-
     return (
         <div className="electron-menu">
             <div className="electron-menu-left">
@@ -37,9 +19,9 @@ const Electron = () => {
             </div>
             <span className="electron-menu-name">Skid Studio Code</span>
             <div className="electron-menu-right">
-                <button onClick={handleMinimiseWindow} className="electron-menu-button"><VscChromeMinimize /></button>
-                <button onClick={handleRestoreWindow} className="electron-menu-button"><VscChromeMaximize /></button>
-                <button onClick={handleCloseWindow} className="electron-menu-button close"><VscChromeClose /></button>
+                <button onClick={window.app.minimise} className="electron-menu-button"><VscChromeMinimize /></button>
+                <button onClick={window.app.restore} className="electron-menu-button"><VscChromeMaximize /></button>
+                <button onClick={window.app.close} className="electron-menu-button close"><VscChromeClose /></button>
             </div>
         </div>
     );

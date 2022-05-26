@@ -2,7 +2,7 @@
 <h3 align="center">The best alternative for Visual Studio Code.</h3>
 
 ### Features
-* **99.9% UI Accuracy** (no need to refamiliarise yourself. it is exactly like VSCode)
+* **Familiar Desigms** (no need to refamiliarise yourself, it is exactly like VSCode)
 * **Desktop App** (install and use offline, no need to connect to the internet)
 </br>
 

@@ -5,7 +5,8 @@
     flex-direction: column;
     height: 100%;
     width: 15rem;
-    background-color: #21252b;
+    min-width: 15rem;
+    background-color: #252526;
 }
 
 .explorer-header {
@@ -62,7 +63,7 @@
     cursor: pointer;
     color: #cccccc;
     user-select: none;
-    background-color: #333842;
+    /* background-color: #333842; */
 }
 
 .explorer-category-header span {
@@ -77,8 +78,10 @@
     flex-direction: column;
     width: 100%;
     /* height: 0;s */
-    background-color: #21252b;
+    /* background-color: #21252b; */
     transition: height 100ms ease-out;
+    border-bottom: 1px solid #474747;
+
 }
 
 .explorer-category-content:not(.hidden) { padding-bottom: 1em; }
@@ -90,7 +93,6 @@
     flex-direction: row;
     align-items: center;
     gap: 0.25rem;
-    padding: 0rem 1rem;
     width: 100%;
     min-height: 1.375rem;
     user-select: none;
@@ -99,12 +101,16 @@
 }
 
 .explorer-content-folder:hover {
-    background-color: #282c34;
+    background-color: #2a2d2e;
+}
+
+.explorer-content-folder svg {
+    margin: 0 0 1px 1rem;
+
 }
 
 .explorer-content-folder-name {
     font-size: 0.8125rem;
-    margin-bottom: 1px;
     color: #cccccc;
 }
 
@@ -113,7 +119,6 @@
     flex-direction: row;
     align-items: center;
     gap: 0.25rem;
-    padding: 0rem 2.25rem;
     width: 100%;
     min-height: 1.375rem;
     height: 1.375rem;
@@ -123,11 +128,15 @@
 }
 
 .explorer-content-file:hover {
-    background-color: #282c34;
+    background-color: #2a2d2e;
 }
 
 .explorer-content-file-name {
     font-size: 0.8125rem;
-    margin-bottom: 1px;
+    margin: 0 0 1px 2.25rem;
     color: #cccccc;
+}
+
+.explorer-content-file.selected {
+    background-color: #37373d;
 }

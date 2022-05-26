@@ -1,3 +1,7 @@
+:root {
+    --color: #cccccc;
+}
+
 body {
     overflow: hidden;
 }
@@ -13,7 +17,7 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    color: #abb2bf;
+    color: var(--color);
     background-color: #282c34;
     overflow: hidden;
 }
@@ -23,7 +27,8 @@ footer {
     flex-direction: row;
     padding: 0 1rem;
     height: 1.5rem;
-    background-color: #21252b;
+    min-height: 1.5rem;
+    background-color: #007acc;
 }
 
 footer .left {
