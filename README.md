@@ -1,3 +1,5 @@
+**THIS PROJECT WILL NO LONGER BE WORKED ON DUE TO MONACO EDITOR NOT WORKING**
+
 <h1 align="center"><a href="https://code.skid.today">Skid Studio Code 🧑‍💻</a></h1>
 <h3 align="center">The best alternative for Visual Studio Code.</h3>
 
