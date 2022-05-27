@@ -13,7 +13,9 @@ const startText =
     * This is a list inside a list`
 
 const Content = () => {
+    const [maxWidth, setMaxWidth] = useState("100%");
     const [editor, setEditor] = useState(null);
+    const [intervalTime, setIntervalTime] = useState(10);
 
     useEffect(() => {
         loader.init().then(monaco => {
@@ -27,32 +29,33 @@ const Content = () => {
                 }
             }
 
-            console.log(require('../../assets/theme.json'));
-
             setEditor(monaco.editor.create(wrapper, properties));
-            monaco.editor.defineTheme("skid", {
-                colors: {
-                    "editor.background": "#282C34",
-                }
-            })
         });
     }, []);
 
-    const handleResize = useCallback(() => {
-        console.log(document.querySelector("#editor").offsetWidth)
-        if (editor !== null) editor.layout();
-    }, [editor]);
-
     useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [editor, handleResize]);
+        const checkSize = setInterval(() => {
+            if (!editor) return;
+
+            const width = document.body.clientWidth - 270;
+            const absoluteWidth = editor.getDomNode().clientWidth;
+            if (absoluteWidth > width) setMaxWidth(width);
+            if (absoluteWidth < width) setMaxWidth("100%");
+            editor.layout();
+        }, intervalTime);
+
+        return () => clearInterval(checkSize);
+    }, [editor, intervalTime]);
 
     return (
         <nav className="content">
-            <div className="content-tabs">
+            <div id="tabs" className="content-tabs">
                 <div className="content-tab">
                     <span className="content-tab-title">yarn.lock</span>
+                    <div className="content-tab-close"><HiOutlineX /></div>
+                </div>
+                <div className="content-tab">
+                    <span className="content-tab-title">package.json</span>
                     <div className="content-tab-close"><HiOutlineX /></div>
                 </div>
                 <div className="content-tab selected">
@@ -60,7 +63,7 @@ const Content = () => {
                     <div className="content-tab-close"><HiOutlineX /></div>
                 </div>
             </div>
-            <div id="editor" className="content-editor">
+            <div id="editor" className="content-editor" style={{ 'maxWidth':  maxWidth }}>
 
             </div>
         </nav>
