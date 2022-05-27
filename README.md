@@ -2,11 +2,12 @@
 <h3 align="center">The best alternative for Visual Studio Code.</h3>
 
 ### Features
-* **Familiar Desigms** (no need to refamiliarise yourself, it is exactly like VSCode)
+* **Familiar and simple** (no need to refamiliarise yourself, it is exactly like VSCode)
 * **Desktop App** (install and use offline, no need to connect to the internet)
+* **Open Source** (no sketchy business going on here, everything is availiable to see)
 </br>
 
-![image](https://user-images.githubusercontent.com/93608862/169913396-4c7e97b8-d14b-4c2d-858d-7def1c0932d9.png)
+![image](https://user-images.githubusercontent.com/93608862/170593122-0dec2189-3ac3-4c58-8b68-d31a994d2fa1.png)
 *Current state of SCode*
 
 ### Install Locally
@@ -21,6 +22,5 @@
   * **Electron Builder** (building electron app for desktop usage)
  
 ### Project Roadmap
-* **Finish All UI Elements** (complete the user interface ready for adding function)
-  * **Finish Explorer UI** (workspace files, adding files etc)
-  * **Finish Content UI** (file tabs, monaco file editor)
+* **Create Working Tabs**
+* ~~**Finish All UI Elements** (complete the user interface ready for adding function)~~
