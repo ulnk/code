@@ -14,6 +14,11 @@
     height: 2.1875rem;
     min-height: 2.1875rem;
     width: 100%;
+    background-color: #1e1e1e;
+    transition: opacity 100ms ease-out;
+}
+
+.content-tabs.show {
     background-color: #252526;
 }
 
@@ -24,6 +29,7 @@
     gap: 0.5rem;
     padding: 0 0.5rem;
     font-size: 0.8125rem;
+    word-wrap: break-word;
     user-select: none;
     min-width: 6.5rem;
     height: 100%;
@@ -32,28 +38,61 @@
     background-color: #2d2d2d;
 }
 
-.content-tab-close {
+.content-tab-title {
+    display: flex;
+    height: 100%;
+    min-width: max-content;
+    align-items: center;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.content-tab-close-container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 1.25rem;
-    width: 1.25rem;
+    width: 1.25rem;    
+    min-height: 1.25rem;
+    min-width: 1.25rem;
     padding: 0.0625rem;
     border-radius: 0.25rem;
     font-size: 1rem;
     margin-left: auto;
     transition: opacity 150ms ease-out, background-color 150ms ease-out;
+    /* background-color: red; */
 }
 
-.content-tab-close:hover {
+.content-tab-close-container * {
+    position: absolute;
+    transform: translate(-25%, -25%);
+}
+
+.content-tab-close-container .hide {
+    opacity: 1;
+}
+
+.content-tab-close-container .content-tab-close {
+    opacity: 0;
+}
+
+.content-tab-close-container:hover {
     background-color: rgba(90, 93, 94, 0.31);
 }
 
-.content-tab.selected .content-tab-close {
+.content-tab-close-container:hover .hide {
+    opacity: 0;
+}
+
+.content-tab-close-container:hover *:not(.hide) {
+    opacity: 1;
+}
+
+.content-tab.selected .content-tab-close-container {
     color: white;
 }
 
-.content-tab:not(.selected) .content-tab-close {
+.content-tab:not(.selected) .content-tab-close-container {
     opacity: 0;
 }
 
@@ -61,7 +100,7 @@
     color: #969696;
 }
 
-.content-tab:hover .content-tab-close {
+.content-tab:hover .content-tab-close-container {
     opacity: 1 !important;
 }
 
@@ -75,4 +114,10 @@
     height: 100%;
     width: 100%;
     user-select: all;
+    opacity: 0;
+    transition: opacity 100ms ease-out;
+}
+
+.content-editor.show {
+    opacity: 1;
 }
